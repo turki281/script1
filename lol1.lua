@@ -57,7 +57,6 @@ openButton.TextSize = 22
 openButton.Visible = true
 
 -- Main frame
-local frame = Instance.new("Frame").Draggable = true
 local frame = Instance.new("Frame", gui)
 frame.Draggable = true
 frame.Size = UDim2.new(0, 300, 0, 350)
@@ -79,8 +78,7 @@ local function createTab(name, order)
     btn.TextSize = 14
     tabButtons[name] = btn
 
-    local tab = Instance.new("Frame").Draggable = true
-local frame = Instance.new("Frame", frame)
+    local tab = Instance.new("Frame", frame)
     tab.Size = UDim2.new(1, -20, 1, -50)
     tab.Position = UDim2.new(0, 10, 0, 50)
     tab.BackgroundTransparency = 1
@@ -255,16 +253,13 @@ local function teleportAboveMap()
 end
 
 -- زر Teleport
-local teleportTab = Instance.new("Frame").Draggable = true
-local frame = Instance.new("Frame", gui)
+local teleportTab = Instance.new("Frame", gui)
 teleportTab.Name = "TeleportTab"
 teleportTab.Size = UDim2.new(0, 220, 0, 100)
 teleportTab.Position = UDim2.new(0, 250, 0, 90)
 teleportTab.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
 
-local teleportButton = 
-teleportButton.Visible = false
-Instance.new("TextButton", teleportTab)
+local teleportButton = Instance.new("TextButton", teleportTab)
 teleportButton.Size = UDim2.new(1, -20, 0, 40)
 teleportButton.Position = UDim2.new(0, 10, 0, 10)
 teleportButton.Text = "Teleport فوق الماب"
@@ -302,16 +297,13 @@ local function enableESP()
 end
 
 -- زر ESP
-local espTab = Instance.new("Frame").Draggable = true
-local frame = Instance.new("Frame", gui)
+local espTab = Instance.new("Frame", gui)
 espTab.Name = "ESPTab"
 espTab.Size = UDim2.new(0, 220, 0, 100)
 espTab.Position = UDim2.new(0, 250, 0, 200)
 espTab.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
 
-local espButton = 
-espButton.Visible = false
-Instance.new("TextButton", espTab)
+local espButton = Instance.new("TextButton", espTab)
 espButton.Size = UDim2.new(1, -20, 0, 40)
 espButton.Position = UDim2.new(0, 10, 0, 10)
 espButton.Text = "تفعيل ESP"
@@ -325,9 +317,7 @@ espButton.MouseButton1Click:Connect(enableESP)
 local originalPosition = nil
 
 -- زر Teleport فوق الماب
-local teleportButton = 
-teleportButton.Visible = false
-Instance.new("TextButton", frame)
+local teleportButton = Instance.new("TextButton", frame)
 teleportButton.Size = UDim2.new(1, -20, 0, 30)
 teleportButton.Position = UDim2.new(0, 10, 0, 250)
 teleportButton.Text = "Teleport فوق الماب"
@@ -345,9 +335,7 @@ teleportButton.MouseButton1Click:Connect(function()
 end)
 
 -- زر العودة للماب
-local returnButton = 
-returnButton.Visible = false
-Instance.new("TextButton", frame)
+local returnButton = Instance.new("TextButton", frame)
 returnButton.Size = UDim2.new(1, -20, 0, 30)
 returnButton.Position = UDim2.new(0, 10, 0, 285)
 returnButton.Text = "العودة للماب"
@@ -368,9 +356,7 @@ end)
 local espEnabled = false
 local espObjects = {}
 
-local espButton = 
-espButton.Visible = false
-Instance.new("TextButton", frame)
+local espButton = Instance.new("TextButton", frame)
 espButton.Size = UDim2.new(1, -20, 0, 30)
 espButton.Position = UDim2.new(0, 10, 0, 320)
 espButton.Text = "تفعيل ESP"
@@ -408,114 +394,3 @@ espButton.MouseButton1Click:Connect(function()
         end
     end
 end)
-
-
--- تبويب Tools وإضافات جديدة
-
--- تبويب Tools
-local toolsTab = Instance.new("Frame").Draggable = true
-local frame = Instance.new("Frame")
-toolsTab.Name = "ToolsTab"
-toolsTab.Size = UDim2.new(1, 0, 1, 0)
-toolsTab.Position = UDim2.new(0, 0, 0, 0)
-toolsTab.BackgroundTransparency = 1
-toolsTab.Visible = false
-toolsTab.Parent = mainFrame
-
--- زر Teleport فوق الماب
-local teleportButton = 
-teleportButton.Visible = false
-Instance.new("TextButton")
-teleportButton.Size = UDim2.new(0, 180, 0, 40)
-teleportButton.Position = UDim2.new(0, 20, 0, 20)
-teleportButton.Text = "Teleport فوق الماب"
-teleportButton.BackgroundColor3 = Color3.fromRGB(0, 170, 255)
-teleportButton.TextColor3 = Color3.new(1, 1, 1)
-teleportButton.Font = Enum.Font.GothamBold
-teleportButton.TextSize = 16
-teleportButton.Parent = toolsTab
-
--- زر العودة للموقع الأصلي
-local returnButton = 
-returnButton.Visible = false
-Instance.new("TextButton")
-returnButton.Size = UDim2.new(0, 180, 0, 40)
-returnButton.Position = UDim2.new(0, 20, 0, 70)
-returnButton.Text = "العودة للماب"
-returnButton.BackgroundColor3 = Color3.fromRGB(0, 170, 255)
-returnButton.TextColor3 = Color3.new(1, 1, 1)
-returnButton.Font = Enum.Font.GothamBold
-returnButton.TextSize = 16
-returnButton.Parent = toolsTab
-
--- زر تفعيل ESP
-local espButton = 
-espButton.Visible = false
-Instance.new("TextButton")
-espButton.Size = UDim2.new(0, 180, 0, 40)
-espButton.Position = UDim2.new(0, 20, 0, 120)
-espButton.Text = "تفعيل ESP"
-espButton.BackgroundColor3 = Color3.fromRGB(0, 170, 255)
-espButton.TextColor3 = Color3.new(1, 1, 1)
-espButton.Font = Enum.Font.GothamBold
-espButton.TextSize = 16
-espButton.Parent = toolsTab
-
--- زر إلغاء ESP
-local disableEspButton = Instance.new("TextButton")
-disableEspButton.Size = UDim2.new(0, 180, 0, 40)
-disableEspButton.Position = UDim2.new(0, 20, 0, 170)
-disableEspButton.Text = "إلغاء ESP"
-disableEspButton.BackgroundColor3 = Color3.fromRGB(255, 80, 80)
-disableEspButton.TextColor3 = Color3.new(1, 1, 1)
-disableEspButton.Font = Enum.Font.GothamBold
-disableEspButton.TextSize = 16
-disableEspButton.Parent = toolsTab
-
--- وظيفة Teleport
-local originalPosition = nil
-teleportButton.MouseButton1Click:Connect(function()
-    originalPosition = character.HumanoidRootPart.Position
-    character.HumanoidRootPart.CFrame = character.HumanoidRootPart.CFrame + Vector3.new(0, 100, 0)
-end)
-
--- وظيفة العودة
-returnButton.MouseButton1Click:Connect(function()
-    if originalPosition then
-        character.HumanoidRootPart.CFrame = CFrame.new(originalPosition)
-    end
-end)
-
--- وظيفة ESP
-local espTags = {}
-espButton.MouseButton1Click:Connect(function()
-    for _, plr in pairs(game.Players:GetPlayers()) do
-        if plr ~= player and plr.Character and plr.Character:FindFirstChild("Head") then
-            local tag = Instance.new("BillboardGui", plr.Character.Head)
-            tag.Size = UDim2.new(0, 100, 0, 40)
-            tag.Adornee = plr.Character.Head
-            tag.AlwaysOnTop = true
-            local nameLabel = Instance.new("TextLabel", tag)
-            nameLabel.Size = UDim2.new(1, 0, 1, 0)
-            nameLabel.BackgroundTransparency = 1
-            nameLabel.Text = plr.Name
-            nameLabel.TextColor3 = Color3.new(1, 1, 1)
-            nameLabel.TextScaled = true
-            table.insert(espTags, tag)
-        end
-    end
-end)
-
--- وظيفة إلغاء ESP
-disableEspButton.MouseButton1Click:Connect(function()
-    for _, tag in pairs(espTags) do
-        tag:Destroy()
-    end
-    espTags = {}
-end)
-
--- جعل زر N والواجهة قابلة للسحب
-mainFrame.Active = true
-mainFrame.Draggable = true
-openButton.Active = true
-openButton.Draggable = true
